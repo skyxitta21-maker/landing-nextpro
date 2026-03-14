@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Créditos | Next Pro</title>
+    <style>
+       body, html {
+            margin: 0;
+            padding: 0;
+            
+            /* AQUÍ AGREGAMOS TU FONDO PNG */
+            background-image: url('img/fondo-creditos.png');
+            background-size: cover; /* Hace que el fondo cubra toda la pantalla sin dejar bordes blancos */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #1a1a1a; /* Un color de respaldo por si el internet está lento */
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+        }
+
+        .contenedor-creditos {
+            width: 100%;
+            max-width: 480px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .img-info1 {
+            width: 90%; /* Ajusta el tamaño de la imagen de los créditos */
+            margin-bottom: 30px;
+        }
+
+        .img-info2 {
+            width: 90%; /* Ajusta el tamaño de la imagen de los créditos */
+            margin-bottom: 40px;
+        }
+
+        .btn-regresar {
+            width: 50px; /* Tamaño de tu botón de flecha/regreso */
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-regresar:active {
+            transform: scale(0.9);
+        }
+
+        .btn-regresar {
+            position: absolute; /* Esto lo libera para moverlo por toda la pantalla */
+            
+            /* COORDENADAS: Cambia esto según dónde lo quieras */
+            top: 570px;    /* Distancia desde el borde superior */
+            left: 37px;   /* Distancia desde el borde izquierdo */
+            
+            width: 45px;  /* Ajusta el tamaño de tu botón aquí */
+            z-index: 10;  /* Lo mantiene por encima del fondo y los créditos */
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .btn-regresar:active {
+            transform: scale(0.9);
+        }
+
+        .btn-regresar img {
+            width: 100%;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="contenedor-creditos">
+        
+        <img src="img/avales.png" alt="Información del equipo" class="img-info1">
+        <img src="img/creditos.png" alt="Información del equipo" class="img-info2">
+
+        <a href="index.html" class="btn-regresar">
+            <img src="img/flecha.png" alt="Regresar">
+        </a>
+
+    </div>
+
+</body>
+</html>
