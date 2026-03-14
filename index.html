@@ -300,29 +300,30 @@
     animation: aura 3s ease-in-out infinite;
 }
 
-        .btn-flotante-info {
+.btn-flotante-info {
             position: fixed; 
-            bottom: 92%; 
-            /* Esto lo ancla a la derecha, pero evita que se salga en monitores anchos */
-            right: max(89%, calc(40% - 220px)); 
-            width: 15%; 
-            max-width: 40px; /* Evita que sea gigante */
+            top: 18px;   /* Lo baja lo suficiente para no chocar con la hora */
+            left: 10px;  /* Lo separa del borde curvo del celular */
+            width: 10%; 
+            max-width: 40px; /* Controla que no se vea gigante */
             z-index: 1000; 
             cursor: pointer;
             transition: transform 0.2s ease;
         }
         .btn-flotante-info:active { transform: scale(0.9); }
-        .btn-flotante-info img { width: 100%; display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5)); 
+        .btn-flotante-info img { width: 100%; 
+            display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5)); 
     }
 
     </style>
 
 </head>
+
 <body>
 
     <div class="lienzo-maestro">
         <a href="creditos.html" class="btn-flotante-info">
-            <img src="img/boton-info.png" alt="Créditos">
+        <img src="img/boton-info.png" alt="Créditos">
         </a>
 
         <img src="img/fondo.png" class="capa-fondo" alt="Fondo">
