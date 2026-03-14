@@ -16,7 +16,7 @@
             background-repeat: no-repeat;
             background-color: #1a1a1a; /* Un color de respaldo por si el internet está lento */
 
-            display: flex;
+            display: block;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
@@ -24,26 +24,37 @@
         }
 
         .contenedor-creditos {
+            position: relative; /* CLAVE: Atrapa al botón para que no se escape */
             width: 100%;
             max-width: 480px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 25px;
-        }
-
-        .img-info1 {
-            width: 90%; /* Ajusta el tamaño de la imagen de los créditos */
-            margin-bottom: 30px;
-        }
-
-        .img-info2 {
-            width: 90%; /* Ajusta el tamaño de la imagen de los créditos */
-            margin-bottom: 40px;
+            /* ... el resto de tus estilos del contenedor ... */
         }
 
         .btn-regresar {
-            width: 50px; /* Tamaño de tu botón de flecha/regreso */
+            position: absolute;
+            top: 4%;    /* Se ubica al 4% del techo del diseño */
+            left: 5%;   /* Se ubica al 5% de la pared izquierda */
+            width: 12%; /* El tamaño del botón se vuelve elástico */
+            z-index: 10;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        /* ... se mantienen el :active y el img { width: 100%; } ... */
+
+        .img-info1 {
+            transform: translate(10%, 10%); /* Este truco la mantiene centrada exactamente en el medio */
+            width: 85%; /* Ajusta este % si quieres que la info se vea más grande o más pequeña */
+            z-index: 2;
+        }
+
+        .img-info2 {
+            transform: translate(10%, 10%); /* Este truco la mantiene centrada exactamente en el medio */
+            width: 85%; /* Ajusta este % si quieres que la info se vea más grande o más pequeña */
+            z-index: 2;
+        }
+
+        .btn-regresar {
+            width: 40px; /* Tamaño de tu botón de flecha/regreso */
             cursor: pointer;
             transition: transform 0.2s ease;
         }

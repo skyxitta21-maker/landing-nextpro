@@ -299,25 +299,22 @@
 .capa-logo, .btn-jugar {
     animation: aura 3s ease-in-out infinite;
 }
-     /* EL BOTÓN FLOTANTE DE INFO */
-    .btn-flotante-info {
-        position: fixed; /* Esto lo ancla a la pantalla del usuario */
-        bottom: 597px;    /* Distancia desde abajo (puedes ajustarlo) */
-        right: 363px;     /* Distancia desde la derecha */
-        width: 40px;     /* Tamaño de tu icono PNG */
-        z-index: 1000;   /* Un número altísimo para que SIEMPRE esté arriba de todo */
-        cursor: pointer;
-        transition: transform 0.2s ease;
+
+        .btn-flotante-info {
+            position: fixed; 
+            bottom: 92%; 
+            /* Esto lo ancla a la derecha, pero evita que se salga en monitores anchos */
+            right: max(89%, calc(40% - 220px)); 
+            width: 15%; 
+            max-width: 40px; /* Evita que sea gigante */
+            z-index: 1000; 
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .btn-flotante-info:active { transform: scale(0.9); }
+        .btn-flotante-info img { width: 100%; display: block; filter: drop-shadow(0px 4px 6px rgba(0,0,0,0.5)); 
     }
 
-    .btn-flotante-info:active {
-        transform: scale(0.9); /* Efecto de click */
-    }
-
-    .btn-flotante-info img {
-        width: 100%;
-        display: block;
-    }
     </style>
 
 </head>
