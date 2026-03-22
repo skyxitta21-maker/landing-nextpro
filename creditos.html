@@ -20,25 +20,54 @@
             overflow: hidden; 
         }
 
-        /* 2. LA CAJA QUE CENTRA TUS CARTAS */
-        .contenedor-creditos {
-            width: -100%;
-            height: 85vh;
+/* 3. EL LIENZO QUE CENTRA TODO PERFECTAMENTE */
+.lienzo-creditos-completo {
+            position: relative; /* Atrapa al personaje y la flecha */
+            width: 100%;
+            max-width: 480px; /* Tamaño máximo para PC */
+            height: 100vh;
+            margin: 0 auto;
+            
+            /* 👇 Flexbox: ¡Esto es magia! 👇 */
             display: flex;
-            flex-direction: column;
-            justify-content: center; /* Centra verticalmente */
-            align-items: center;     /* Centra horizontalmente */
-            gap: 3vh;               /* Separación entre las dos cartas */
+            flex-direction: column;  /* Apila las cartas una debajo de la otra */
+            justify-content: center; /* Centra las cartas VERTICALMENTE */
+            align-items: center;     /* Centra las cartas HORIZONTALMENTE */
+            
+            gap: 20px; /* Espacio fijo entre las dos cartas */
+            padding: 20px; /* Margen de seguridad a los lados */
         }
 
-        /* 3. TUS CARTAS */
+    /* EL PERSONAJE EXTRA DECORATIVO */
+    .personaje-creditos {
+            position: absolute;
+            z-index: 5; /* Por encima de las cartas */
+            pointer-events: none; /* No estorba los clics */
+            
+            /* 👇 COORDENADAS: Clavado abajo a la derecha 👇 */
+            bottom: 78%;   /* Un poquito afuera para que se vea como en tu diseño */
+            right: 5%;    
+            
+            /* 👇 TAMAÑO: Mucho más grande para llenar el espacio vacío 👇 */
+            width: 80%;    /* Ocupa la mitad del ancho del celular */
+            max-width: 120px; /* Tamaño máximo seguro para PC */
+            height: auto;
+
+            transform: rotate(10deg);
+        }
+        
+        /* 4. TUS CARTAS INDIVIDUALES */
         .carta-info {
-            width: min(90%, 46vh) !important;     
-            min-width: 280px !important;
-            height: auto !important;
-            object-fit: contain;
-            flex-shrink: 0;
-            z-index: 2;
+            position: absolute;
+            bottom: 15%;
+
+            width: 100%; /* Ocupa el ancho disponible seguro */
+            
+            /* 👇 ESTO EVITA QUE SE DEFORMEN O APLASTEN 👇 */
+            max-height: 70dvh; /* Cada carta no puede medir más del 40% del alto de la pantalla */
+            object-fit: contain; /* Mantiene la proporción perfecta del PNG */
+            
+            z-index: 2; /* Debajo del personaje y de la flecha */
         }
 
         /* 4. EL BOTÓN DE REGRESAR */
@@ -67,8 +96,9 @@
 
     <div class="contenedor-creditos">
         
-        <img src="img/avales.png" alt="Informacion" class="carta-info">
-        <img src="img/creditos.png" alt="informacion" class="carta-info">
+        <img src="img/creditos-finales.png" alt="informacion" class="carta-info">
+
+        <img src="img/personaje-creditos.png" alt="Decoracion" class="personaje-creditos">
 
         <a href="index.html" class="btn-regresar">
             <img src="img/flecha.png" alt="Regresar">
