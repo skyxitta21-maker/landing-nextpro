@@ -38,33 +38,16 @@
             padding: 20px; /* Margen de seguridad a los lados */
         }
 
-    /* EL PERSONAJE EXTRA DECORATIVO */
-    .personaje-creditos {
-            position: absolute;
-            z-index: 5; /* Por encima de las cartas */
-            pointer-events: none; /* No estorba los clics */
-            
-            /* 👇 COORDENADAS: Clavado abajo a la derecha 👇 */
-            bottom: 78%;   /* Un poquito afuera para que se vea como en tu diseño */
-            right: 5%;    
-            
-            /* 👇 TAMAÑO: Mucho más grande para llenar el espacio vacío 👇 */
-            width: 80%;    /* Ocupa la mitad del ancho del celular */
-            max-width: 120px; /* Tamaño máximo seguro para PC */
-            height: auto;
-
-            transform: rotate(10deg);
-        }
         
         /* 4. TUS CARTAS INDIVIDUALES */
         .carta-info {
             position: absolute;
-            bottom: 15%;
+            bottom: 17%;
 
-            width: 100%; /* Ocupa el ancho disponible seguro */
+            width: 102%; /* Ocupa el ancho disponible seguro */
             
             /* 👇 ESTO EVITA QUE SE DEFORMEN O APLASTEN 👇 */
-            max-height: 70dvh; /* Cada carta no puede medir más del 40% del alto de la pantalla */
+            max-height: 73dvh; /* Cada carta no puede medir más del 40% del alto de la pantalla */
             object-fit: contain; /* Mantiene la proporción perfecta del PNG */
             
             z-index: 2; /* Debajo del personaje y de la flecha */
@@ -97,8 +80,6 @@
     <div class="contenedor-creditos">
         
         <img src="img/creditos-finales.png" alt="informacion" class="carta-info">
-
-        <img src="img/personaje-creditos.png" alt="Decoracion" class="personaje-creditos">
 
         <a href="index.html" class="btn-regresar">
             <img src="img/flecha.png" alt="Regresar">
